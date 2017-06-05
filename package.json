@@ -1,0 +1,19 @@
+{
+  "name": "piano-reader",
+  "version": "0.2.0",
+  "description": "go through piano theory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gigacool/piano-reader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gigacool/piano-reader/issues"
+  },
+  "homepage": "https://github.com/gigacool/piano-reader#readme"
+}

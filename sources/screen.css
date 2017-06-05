@@ -1,0 +1,99 @@
+#partition {
+  padding: 20px;
+  position: relative;
+}
+
+.line {
+  border-bottom: solid thin #888;
+  margin-bottom: 10px;
+}
+
+
+.clef-de-sol {
+  /*background: url('./G-clef.png');*/
+  /*background-repeat: no-repeat;
+  background-position: center;*/
+  height: 70px;
+  /*width: 60px;*/
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.notes {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 60px;
+  right: 0;
+
+}
+
+.note-value {
+  font-size: 16px;
+  position: absolute;
+  bottom:0;
+  margin-top: 10px;
+  /*display: none;*/
+  color: #ccc;
+}
+
+.no-hint .note-value {
+  display:none;
+}
+
+.note {
+  font-size: 42px;
+  float: left;
+  margin-left: 20px;
+  position: relative;
+  width: 20px;
+  height: 100%;
+  text-align:
+}
+
+.note-0 {
+  margin-top: 33px;
+
+}
+.note-0:before{
+  content:' ';
+  position: absolute;
+  border-bottom: solid thin #888;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  z-index: -1;
+}
+
+.note-1 {
+  margin-top: 26px;
+}
+
+.note-2 {
+  margin-top: 22px;
+}
+
+.note-3 {
+  margin-top: 16px;
+}
+
+.note-4 {
+  margin-top: 11px;
+}
+
+.note-5 {
+  margin-top: 6px;
+}
+
+@media print {
+
+  button {
+    display: none;
+  }
+
+  @page {
+      margin:  1.7cm;
+  }
+
+}

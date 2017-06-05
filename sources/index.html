@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Learn piano theory</title>
+  <meta name="description" content="learn about piano theory">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="screen.css">
+</head>
+
+<body>
+  <h1>Apprentissage du piano</h1>
+  <button onClick="window.print();">Print</button>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+
+      let notes = ['do','ré','mi','fa','sol','la','si'];
+
+      function generatePartition(size){
+        const result = [];
+        for(let i=0; i<size;i++){
+          // result.push(i);
+          result.push(Math.round(Math.random()*(notes.length-1)));
+        }
+        return result;
+      }
+
+      function render($el, partition){
+        const $p = $el.find('.notes');
+        partition.forEach((note)=>{
+          $p.append('<div class="note">'
+           + '<div class="note-value">'+ notes[note] +'</div>'
+           + '<div class="note-' + note + '" title="' + notes[note]+ '" >&#9833;</div>'
+           + '</div>')
+        })
+      }
+
+      const partitions = [];
+      for(let i=0; i<6; i++){
+        partitions.push(generatePartition(22));
+      }
+
+      for(let i=0;i<partitions.length;i++){
+        let $cont = $('<div id="partition"  class="no-hint">\
+          <div class="line line-1" ></div>\
+          <div class="line line-2" ></div>\
+          <div class="line line-3" ></div>\
+          <div class="line line-4" ></div>\
+          <div class="line line-5" ></div>\
+          <img class="clef-de-sol" src="./G-clef.svg" />'
+          // <div class="clef-de-sol"></div>\
+          + '<div class="notes"></div>\
+        </div>');
+        render($cont, partitions[i]);
+        $('body').append($cont);
+      }
+
+      $('body').append('<h2>Solution</h2>');
+
+      for(let i=0;i<partitions.length;i++){
+        let $cont = $('<div id="partition" class="hint">\
+          <div class="line line-1" ></div>\
+          <div class="line line-2" ></div>\
+          <div class="line line-3" ></div>\
+          <div class="line line-4" ></div>\
+          <div class="line line-5" ></div>\
+          <img class="clef-de-sol" src="./G-clef.svg" />'
+          // <div class="clef-de-sol"></div>\
+          + '<div class="notes"></div>\
+        </div>');
+        render($cont, partitions[i]);
+        $('body').append($cont);
+      }
+
+  </script>
+</body>
+</html>
